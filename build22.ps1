@@ -1,4 +1,4 @@
-﻿<#fireEye red team vuln scanner :: build 20/seagull (Datto RMM) :: user variables: usrScanScope
+﻿<#fireEye red team vuln scanner :: build 22/seagull (Datto RMM) :: user variables: usrScanScope
 provided for other RMMs for the good of the community :: preserve all seagull and Datto RMM credits#>
 
 #scanning function
@@ -36,10 +36,10 @@ write-host "====================================================="
 $script:varDetection=0
 
 #check to make sure yara will run on the host device
-cmd /c "yara32.exe -v" >nul 2>&1
+cmd /c "yara$varch.exe -v >nul 2>&1"
 $varExit=$LASTEXITCODE
 if ($varExit -ne 0) {
-    write-host "! ERROR: Yara was unable to run on this device."
+    write-host "! ERROR: YARA was unable to run on this device."
     write-host "  The Visual C++ Redistributable is required in order to use YARA."
     if ($env:CS_CC_HOST) {
         write-host "  An installer Component is available from the ComStore."

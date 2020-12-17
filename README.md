@@ -1,5 +1,5 @@
 # Datto RMM :: FireEye Red Team Countermeasure Scanner
-Build 20, 16th December 2020, (C) Copyright Datto, Inc.
+Build 22, 17th December 2020, (C) Copyright Datto, Inc.
 
 ## BACKSTORY
 
