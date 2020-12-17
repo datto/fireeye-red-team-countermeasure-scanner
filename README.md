@@ -6,7 +6,7 @@ Build 20, 16th December 2020, (C) Copyright Datto, Inc.
 On the 8th of December, a group of security auditors and consultants within FireEye's internal "Red Team" were hacked by a sophisticated state actor. In the attack, tools used by Red Team to test vulnerabilities in systems being audited were exfiltrated.
 Following the news of the hack, FireEye decided to release countermeasures to the public to help detect whether stolen Red Team code has been used by malicious actors to leverage attacks on their devices. 
 
-Using FireEye's countermeasures, Datto are making available a script which scans a system for executables showing signatures associated with Red Team's code. This is intended to give administrators peace of mind, both that the stolen code is not being used in the wild and that their systems are not being actively attacked with it.
+Using FireEye's countermeasures, Datto is making available a script which scans a system for executables showing signatures associated with Red Team's code.
 
 Presence of an infected file does not necessarily imply a successful attack; if a device is properly patched, Red Team's tools are ineffectual. FireEye have provided a list of CVEs to patch against in order to guarantee protection against their exploits.
 The list is: https://github.com/fireeye/red_team_tool_countermeasures/blob/master/CVEs_red_team_tools.md
