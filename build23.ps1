@@ -1,4 +1,4 @@
-﻿<#fireEye red team vuln scanner :: build 22/seagull (Datto RMM) :: user variables: usrScanScope
+<#fireEye red team vuln scanner :: build 23/seagull (Datto RMM) :: user variables: usrScanScope
 provided for other RMMs for the good of the community :: preserve all seagull and Datto RMM credits#>
 
 #scanning function
@@ -21,10 +21,14 @@ function doScan {
         clear-variable yaResult -ErrorAction SilentlyContinue
         $yaResult=cmd /c "yara$varch.exe `"all-yara.yar`" `"$file`" -s"
         if ($yaResult) {
+            #sound an alarm
             write-host "====================================================="
             $script:varDetection=1
             write-host "! DETECTION:"
             write-host $yaResult
+            #write to a file
+            if (!(test-path "detections.txt" -ErrorAction SilentlyContinue)) {set-content -path "detections.txt" -Value "! FILES DETECTED !"}
+            Add-Content "detections.txt" -Value $yaResult
         }
     }
 }
@@ -85,6 +89,7 @@ if ($env:usrScanScope -eq 2) {
 if ($script:varDetection -eq 1) {
     write-host "====================================================="
     write-host "! Files containing FireEye exploit code have been found on the system."
+    write-host "  These files are noted above and locally on the device as detections.txt."
 } else {
     write-host "- No files matching FireEye exploit code were found on the system."
 }
