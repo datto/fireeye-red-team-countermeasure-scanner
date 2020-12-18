@@ -51,4 +51,6 @@ This script was written by seagull for Datto RMM. The Component was written for 
 YARA is a project by VirusTotal. The "yara-COPYING.txt" file is included at their request. GitHub: https://github.com/VirusTotal/yara/
 The YARA definitions were released by FireEye. GitHub: https://github.com/fireeye/red_team_tool_countermeasures
 
+Special thanks to Elliot Gardner for his suggestions to improve logging.
+
 Datto RMM: https://www.datto.com/rmm
